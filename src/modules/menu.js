@@ -1,5 +1,4 @@
 const menu = () => {
-   const cartArray = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
    const cardsMenu = document.querySelector('.cards-menu')
 
    const changeTitle = ({ kitchen, name, id, price, stars }) => {
@@ -17,6 +16,7 @@ const menu = () => {
    }
 
    const addToCart = cartItem => {
+      const cartArray = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
       if (cartArray.some(item => item.id === cartItem.id)) {
          cartArray.map(item => {
             if (item.id === cartItem.id) {
